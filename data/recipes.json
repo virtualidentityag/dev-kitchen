@@ -1,0 +1,89 @@
+{
+    "recipe01": {
+        "name": "Gnocchi on tomato-cream sauce with mozzarella and basil",
+        "tags": ["italien", "Eddiable", "hungry as hell"],
+        "time": {
+            "ammount": "10",
+            "unit": "minutes"
+        },
+        "price": "$",
+        "difficulty": {
+            "easyAsEddi": false,
+            "easyAsShit": true,
+            "JuniorKitchenDeveloper": false,
+            "SeniorKitchenDeveloper": false,
+            "KitchenImpossible": false
+        },
+        "dishWashingLevel": "1",
+        "rating": "1",
+        "leftovers": "0",
+        "vegan": false,
+        "vegetarian": true,
+        "minPersons": "4",
+        "ingredients": {
+            "ingredient01": {
+                "name": "Gnocchi",
+                "amount": {
+                    "number": "500",
+                    "unit": "gr"
+                }
+            },
+            "ingredient02": {
+                "name": "fresh coctail tomatos",
+                "amount": {
+                    "number": "6",
+                    "unit": "pcs"
+                }
+            },
+            "ingredient03": {
+                "name": "tomato paste",
+                "amount": {
+                    "number": "2",
+                    "unit": "hts"
+                }
+            },
+            "ingredient04": {
+                "name": "tomato pesto",
+                "amount": {
+                    "number": "100",
+                    "unit": "ml"
+                }
+            },
+            "ingredient05": {
+                "name": "cream",
+                "amount": {
+                    "number": "200",
+                    "unit": "ml"
+                }
+            },
+            "ingredient06": {
+                "name": "mozzarella",
+                "amount": {
+                    "number": "2",
+                    "unit": "pcs"
+                }
+            },
+            "ingredient07": {
+                "name": "basil",
+                "amount": {
+                    "number": "60",
+                    "unit": "gr"
+                }
+            },
+            "ingredient08": {
+                "name": "pepper & salt",
+                "amount": {
+                    "number": "1",
+                    "unit": "feeling"
+                }
+            },
+            "cookingInstructions": {
+                "step01": "Put tomato paste, tomato pesto and cream in a small pot and let it boil brefly. Afterwards, keep it cooking on the smallest level.",
+                "step02": "While cutting the fresh coctail tomatos into quaters, boil about 2 L of water for the Gnocchis. Don#t forget to put salt in the water after it startet boiling.",
+                "step03": "Cut mozzarella into small pieces and take off the basil lieves from the stalk.",
+                "step04": "Put the fresh coctail tomatos in the sauce and the gnocchis in the water. The gnocchis are finished when swimming on the water surface.",
+                "step05": "When the gnocchis are ready, pour off the water, spice up the sauce with a pinch of pepper & salt and serve the gnocchis with sauce as topping. Mozzarella and basil can be added optional."
+            }
+        }
+    }
+}
