@@ -24,3 +24,9 @@
 .specList {
     list-style-type: none;
 }
+
+img {
+    vertical-align: top;
+    width: 75px;
+    height: 75px;
+}

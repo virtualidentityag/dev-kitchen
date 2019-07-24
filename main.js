@@ -157,7 +157,7 @@ fetch('https://virtualidentityag.github.io/dev-kitchen/data/recipes.json')
                         ${recipes[indexReduce].cookingInstructions[6] ? `<br> <b>Step 7:</b> ${recipes[indexReduce].cookingInstructions[6]}` : ''}
                         `;
 
-                        document.getElementById("recipes__itemAssistantChef-" + listIndex).innerHTML = "<b>Assistant Chef: </b>" + `<a href="${recipes[indexReduce].assistantChef[0]}" target="_blank">${recipes[indexReduce].assistantChef[1]}</a>` + `<img src="${recipes[indexReduce].assistantChef[2]}" alt="Photo">`;
+                        document.getElementById("recipes__itemAssistantChef-" + listIndex).innerHTML = "<b>Assistant Chef: </b>" + `<br> <img src="${recipes[indexReduce].assistantChef[2]}" alt="Photo">` + `<br> <a href="${recipes[indexReduce].assistantChef[0]}" target="_blank">${recipes[indexReduce].assistantChef[1]}</a>`;
                 })
             
     })
