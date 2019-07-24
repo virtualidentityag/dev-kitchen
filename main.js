@@ -18,62 +18,15 @@ let recipes = [{
         vegan: false,
         vegetarian: true,
         minPersons: 4,
-        ingredients: [{
-                name: "Gnocchi",
-                amount: {
-                    number: 500,
-                    unit: "gr"
-                }
-            },
-            {
-                name: "fresh coctail tomatos",
-                amount: {
-                    number: 6,
-                    unit: "pcs"
-                }
-            },
-            {
-                name: "tomato paste",
-                amount: {
-                    number: 2,
-                    unit: "hts"
-                }
-            },
-            {
-                name: "tomato pesto",
-                amount: {
-                    number: 100,
-                    unit: "ml"
-                }
-            },
-            {
-                name: "cream",
-                amount: {
-                    number: 200,
-                    unit: "ml"
-                }
-            },
-            {
-                name: "mozzarella",
-                amount: {
-                    number: 2,
-                    unit: "pcs"
-                }
-            },
-            {
-                name: "basil",
-                amount: {
-                    number: 60,
-                    unit: "gr"
-                }
-            },
-            {
-                name: "pepper & salt",
-                amount: {
-                    number: 1,
-                    unit: "feeling"
-                }
-            }
+        ingredients: [
+            "500 gr Gnocchi",
+            "6 pcs fresh coctail tomatos",
+            "2 HTS tomato paste",
+            "100 ml tomato pesto",
+            "200 ml cream",
+            "2 pcs mozzarella",
+            "60 gr basil",
+            "1 feeling of pepper & salt"
         ],
         cookingInstructions: [
             "Put tomato paste, tomato pesto and cream in a small pot and let it boil brefly. Afterwards, keep it cooking on the smallest level.",
@@ -84,7 +37,35 @@ let recipes = [{
         ]
     },
     {
-        name: "Halumi Sandwich DELUXE",
+        "name": "Swabian pockets (Maultaschen) with eggs",
+        "tags": ["Swabian", "Eddiable", "basics"],
+        "time": 10,
+        "price": 1,
+        "difficulty": 1,
+        "dishWashingLevel": 1,
+        "rating": 2,
+        "leftovers": 1,
+        "vegan": false,
+        "vegetarian": false,
+        "minPersons": 4,
+        ingredients: [
+            "1 kg Swabian pockets (Maultaschen)",
+            "2 pcs onions",
+            "6 pcs eggs",
+            "150 ml milk",
+            "2 pcs spring onions",
+            "1 feeling pepper & salt"
+        ],
+        cookingInstructions: [
+            "Cut the swabian pockets into 4 thick slices.",
+            "Fry the swabian pockets in a pan until they are nearly done.",
+            "Cut all onions into small pieces and add the normal to the swabian pockets and fry them until the onions are glassy.",
+            "Squirl the eggs, milk, spring onions, salt & pepper heavily until the surface is covered with bubbles.",
+            "Pure the eggs into the pan with onions and fry everything together until the egg is done."
+        ]
+    },
+    {
+        name: "Halloumi Sandwich DELUXE",
         tags: ["quick & dirty", "light stuff"],
         time: 10,
         price: 2,
@@ -95,68 +76,21 @@ let recipes = [{
         vegan: false,
         vegetarian: true,
         minPersons: 4,
-        ingredients: [{
-                name: "french baguette",
-                amount: {
-                    number: 1,
-                    unit: "pcs"
-                }
-            },
-            {
-                name: "salat leaves",
-                amount: {
-                    number: 8,
-                    unit: "pcs"
-                }
-            },
-            {
-                name: "champignons",
-                amount: {
-                    number: 100,
-                    unit: "gr"
-                }
-            },
-            {
-                name: "onion",
-                amount: {
-                    number: 2,
-                    unit: "pcs"
-                }
-            },
-            {
-                name: "cucumber",
-                amount: {
-                    number: 0.5,
-                    unit: "pcs"
-                }
-            },
-            {
-                name: "hamuli cheese",
-                amount: {
-                    number: 2,
-                    unit: "pcs"
-                }
-            },
-            {
-                name: "blsamico sauce",
-                amount: {
-                    number: 1,
-                    unit: "feeling"
-                }
-            },
-            {
-                name: "curry ketchup",
-                amount: {
-                    number: 1,
-                    unit: "feeling"
-                }
-            }
+        ingredients: [
+            "1 pcs french baguette",
+            "8 pcs salat leaves",
+            "100 gr champignons",
+            "2 pcs onion",
+            "0.5 pcs cucumber",
+            "2 pcs halloumi cheese",
+            "1 feeling balsamico sauce",
+            "1 feeling curry ketchup"
         ],
         cookingInstructions: [
             "Slice the champignons and onions and fry them in a pan until to the wanted consistency",
-            "Slice each halumi into 4 pieces and fry it in a second pan until it is light brown on both sides.",
+            "Slice each halloumi into 4 pieces and fry it in a second pan until it is light brown on both sides.",
             "Cut the french baguett into 4 pieces and those pieces into half (like a sandwich bread). Put 2 leaves of salat and some sclies cucumber on one side of the baguette.",
-            "Put 2 slices of halumi, some champignons and onions on the other side of the baguette and add some curry ketchup and balsamico sauce.",
+            "Put 2 slices of halloumi, some champignons and onions on the other side of the baguette and add some curry ketchup and balsamico sauce.",
             "Put both sides together and enjoy the DELUXE sandwich."
         ]
     }
@@ -181,115 +115,153 @@ let recipeItemsCookingInstructions;
 let listIndex = 0;
 
 recipes.forEach(function() {
-    listIndex++;
-    listElement = document.createElement("li");
-    listElement.className = "recipes__list-element";
+            listIndex++;
+            listElement = document.createElement("li");
+            listElement.className = "recipes__list-element";
 
-    recipeItemsName = document.createElement("li");
-    recipeItemsName.id = "recipes__itemName-" + listIndex;
-    recipeItemsName.className = "recipes__items";
+            recipeItemsName = document.createElement("li");
+            recipeItemsName.id = "recipes__itemName-" + listIndex;
+            recipeItemsName.className = "recipes__items";
 
-    recipeItemsTime = document.createElement("li");
-    recipeItemsTime.id = "recipes__itemTime-" + listIndex;
-    recipeItemsTime.className = "recipes__items";
+            recipeItemsTime = document.createElement("li");
+            recipeItemsTime.id = "recipes__itemTime-" + listIndex;
+            recipeItemsTime.className = "recipes__items";
 
-    recipeItemsTags = document.createElement("li");
-    recipeItemsTags.id = "recipes__itemTags-" + listIndex;
-    recipeItemsTags.className = "recipes__items";
+            recipeItemsTags = document.createElement("li");
+            recipeItemsTags.id = "recipes__itemTags-" + listIndex;
+            recipeItemsTags.className = "recipes__items";
 
-    recipeItemsPrice = document.createElement("li");
-    recipeItemsPrice.id = "recipes__itemPrice-" + listIndex;
-    recipeItemsPrice.className = "recipes__items";
+            recipeItemsPrice = document.createElement("li");
+            recipeItemsPrice.id = "recipes__itemPrice-" + listIndex;
+            recipeItemsPrice.className = "recipes__items";
 
-    recipeItemsDifficulty = document.createElement("li");
-    recipeItemsDifficulty.id = "recipes__itemDifficulty-" + listIndex;
-    recipeItemsDifficulty.className = "recipes__items";
+            recipeItemsDifficulty = document.createElement("li");
+            recipeItemsDifficulty.id = "recipes__itemDifficulty-" + listIndex;
+            recipeItemsDifficulty.className = "recipes__items";
 
-    recipeItemsDishWashingLevel = document.createElement("li");
-    recipeItemsDishWashingLevel.id = "recipes__itemDishWashingLevel-" + listIndex;
-    recipeItemsDishWashingLevel.className = "recipes__items";
+            recipeItemsDishWashingLevel = document.createElement("li");
+            recipeItemsDishWashingLevel.id = "recipes__itemDishWashingLevel-" + listIndex;
+            recipeItemsDishWashingLevel.className = "recipes__items";
 
-    recipeItemsRating = document.createElement("li");
-    recipeItemsRating.id = "recipes__itemRating-" + listIndex;
-    recipeItemsRating.className = "recipes__items";
+            recipeItemsRating = document.createElement("li");
+            recipeItemsRating.id = "recipes__itemRating-" + listIndex;
+            recipeItemsRating.className = "recipes__items";
 
-    recipeItemsLeftovers = document.createElement("li");
-    recipeItemsLeftovers.id = "recipes__itemLeftovers-" + listIndex;
-    recipeItemsLeftovers.className = "recipes__items";
+            recipeItemsLeftovers = document.createElement("li");
+            recipeItemsLeftovers.id = "recipes__itemLeftovers-" + listIndex;
+            recipeItemsLeftovers.className = "recipes__items";
 
-    recipeItemsVegan = document.createElement("li");
-    recipeItemsVegan.id = "recipes__itemVegan-" + listIndex;
-    recipeItemsVegan.className = "recipes__items";
+            recipeItemsVegan = document.createElement("li");
+            recipeItemsVegan.id = "recipes__itemVegan-" + listIndex;
+            recipeItemsVegan.className = "recipes__items";
 
-    recipeItemsVegetarian = document.createElement("li");
-    recipeItemsVegetarian.id = "recipes__itemVegetarian-" + listIndex;
-    recipeItemsVegetarian.className = "recipes__items";
+            recipeItemsVegetarian = document.createElement("li");
+            recipeItemsVegetarian.id = "recipes__itemVegetarian-" + listIndex;
+            recipeItemsVegetarian.className = "recipes__items";
 
-    recipeItemsMinPerson = document.createElement("li");
-    recipeItemsMinPerson.id = "recipes__itemMinPerson-" + listIndex;
-    recipeItemsMinPerson.className = "recipes__items";
+            recipeItemsMinPerson = document.createElement("li");
+            recipeItemsMinPerson.id = "recipes__itemMinPerson-" + listIndex;
+            recipeItemsMinPerson.className = "recipes__items";
 
-    recipeItemsIngredients = document.createElement("li");
-    recipeItemsIngredients.id = "recipes__itemIngredients-" + listIndex;
-    recipeItemsIngredients.className = "recipes__items";
+            recipeItemsIngredients = document.createElement("li");
+            recipeItemsIngredients.id = "recipes__itemIngredients-" + listIndex;
+            recipeItemsIngredients.className = "recipes__items";
 
-    recipeItemsCookingInstructions = document.createElement("li");
-    recipeItemsCookingInstructions.id = "recipes__itemCookingInstructions-" + listIndex;
-    recipeItemsCookingInstructions.className = "recipes__items";
+            recipeItemsCookingInstructions = document.createElement("li");
+            recipeItemsCookingInstructions.id = "recipes__itemCookingInstructions-" + listIndex;
+            recipeItemsCookingInstructions.className = "recipes__items";
 
-    let indexReduce = listIndex - 1;
+            let indexReduce = listIndex - 1;
 
-    listElement.appendChild(recipeItemsName);
-    listElement.appendChild(recipeItemsTime);
-    listElement.appendChild(recipeItemsTags);
-    listElement.appendChild(recipeItemsPrice);
-    listElement.appendChild(recipeItemsDifficulty);
-    listElement.appendChild(recipeItemsDishWashingLevel);
-    listElement.appendChild(recipeItemsRating);
-    listElement.appendChild(recipeItemsLeftovers);
-    listElement.appendChild(recipeItemsVegan);
-    listElement.appendChild(recipeItemsVegetarian);
-    listElement.appendChild(recipeItemsMinPerson);
-    listElement.appendChild(recipeItemsIngredients);
-    listElement.appendChild(recipeItemsCookingInstructions);
+            listElement.appendChild(recipeItemsName);
+            listElement.appendChild(recipeItemsTime);
+            listElement.appendChild(recipeItemsTags);
+            listElement.appendChild(recipeItemsPrice);
+            listElement.appendChild(recipeItemsDifficulty);
+            listElement.appendChild(recipeItemsDishWashingLevel);
+            listElement.appendChild(recipeItemsRating);
+            listElement.appendChild(recipeItemsLeftovers);
+            listElement.appendChild(recipeItemsVegan);
+            listElement.appendChild(recipeItemsVegetarian);
+            listElement.appendChild(recipeItemsMinPerson);
+            listElement.appendChild(recipeItemsIngredients);
+            listElement.appendChild(recipeItemsCookingInstructions);
 
-    document.getElementById("recipes__list").appendChild(listElement);
+            document.getElementById("recipes__list").appendChild(listElement);
 
-    document.getElementById("recipes__itemName-" + listIndex).innerHTML = "Name: " + recipes[indexReduce].name;
-    document.getElementById("recipes__itemTags-" + listIndex).innerHTML = "Tags: " + recipes[indexReduce].tags;
-    document.getElementById("recipes__itemTime-" + listIndex).innerHTML = "Time: " + recipes[indexReduce].time;
-    document.getElementById("recipes__itemPrice-" + listIndex).innerHTML = "$-$$$: " + recipes[indexReduce].price;
-    document.getElementById("recipes__itemDifficulty-" + listIndex).innerHTML = "Difficulty (1-5): " + recipes[indexReduce].difficulty;
-    document.getElementById("recipes__itemDishWashingLevel-" + listIndex).innerHTML = "Dish washing level (1-5): " + recipes[indexReduce].dishWashingLevel;
-    document.getElementById("recipes__itemRating-" + listIndex).innerHTML = "Rating (1-5): " + recipes[indexReduce].Rating;
-    document.getElementById("recipes__itemLeftovers-" + listIndex).innerHTML = "Leftovers (1-5): " + recipes[indexReduce].leftovers;
-    document.getElementById("recipes__itemVegan-" + listIndex).innerHTML = "Vegan: " + recipes[indexReduce].vegan;
-    document.getElementById("recipes__itemVegetarian-" + listIndex).innerHTML = "Vegetarian: " + recipes[indexReduce].vegetarian;
-    document.getElementById("recipes__itemMinPerson-" + listIndex).innerHTML = "Min persons: " + recipes[indexReduce].minPersons;
+            document.getElementById("recipes__itemTags-" + listIndex).innerHTML = "Tags: " + `
+                ${recipes[indexReduce].tags[0] ? `<br> - ${recipes[indexReduce].tags[0]}` : ''}
+                ${recipes[indexReduce].tags[1] ? `<br> - ${recipes[indexReduce].tags[1]}` : ''}
+                ${recipes[indexReduce].tags[2] ? `<br> - ${recipes[indexReduce].tags[2]}` : ''}
+                ${recipes[indexReduce].tags[3] ? `<br> - ${recipes[indexReduce].tags[3]}` : ''}
+                ${recipes[indexReduce].tags[4] ? `<br> - ${recipes[indexReduce].tags[4]}` : ''}
+            `;
 
-    let ingredients0 = `${recipes[indexReduce].ingredients[0].amount.number} ${recipes[indexReduce].ingredients[0].amount.unit} ${recipes[indexReduce].ingredients[0].name}`;
-    let ingredients1 = `${recipes[indexReduce].ingredients[1].amount.number} ${recipes[indexReduce].ingredients[1].amount.unit} ${recipes[indexReduce].ingredients[1].name}`;
-    let ingredients2 = `${recipes[indexReduce].ingredients[2].amount.number} ${recipes[indexReduce].ingredients[2].amount.unit} ${recipes[indexReduce].ingredients[2].name}`;
-    let ingredients3 = `${recipes[indexReduce].ingredients[3].amount.number} ${recipes[indexReduce].ingredients[3].amount.unit} ${recipes[indexReduce].ingredients[3].name}`;
-    let ingredients4 = `${recipes[indexReduce].ingredients[4].amount.number} ${recipes[indexReduce].ingredients[4].amount.unit} ${recipes[indexReduce].ingredients[4].name}`;
-    let ingredients5 = `${recipes[indexReduce].ingredients[5].amount.number} ${recipes[indexReduce].ingredients[5].amount.unit} ${recipes[indexReduce].ingredients[5].name}`;
-    let ingredients6 = `${recipes[indexReduce].ingredients[6].amount.number} ${recipes[indexReduce].ingredients[6].amount.unit} ${recipes[indexReduce].ingredients[6].name}`;
 
-    document.getElementById("recipes__itemIngredients-" + listIndex).innerHTML = "Ingredients:" + `
-        <br> - ${ingredients0} 
-        <br> - ${ingredients1} 
-        <br> - ${ingredients2} 
-        <br> - ${ingredients3} 
-        <br> - ${ingredients4} 
-        <br> - ${ingredients5} 
-        <br> - ${ingredients6}
-        `;
+            document.getElementById("recipes__itemName-" + listIndex).innerHTML = "<b>Name: </b>" + recipes[indexReduce].name;
+            document.getElementById("recipes__itemTime-" + listIndex).innerHTML = "<b>Time: </b>" + recipes[indexReduce].time;
+            document.getElementById("recipes__itemPrice-" + listIndex).innerHTML = "<b>$-$$$: </b>" + recipes[indexReduce].price;
+            document.getElementById("recipes__itemDifficulty-" + listIndex).innerHTML = "<b>Difficulty (1-5): </b>" + recipes[indexReduce].difficulty;
+            document.getElementById("recipes__itemDishWashingLevel-" + listIndex).innerHTML = "<b>Dish washing level (1-5): </b>" + recipes[indexReduce].dishWashingLevel;
+            document.getElementById("recipes__itemRating-" + listIndex).innerHTML = "<b>Rating (1-5): </b>" + recipes[indexReduce].rating;
+            document.getElementById("recipes__itemLeftovers-" + listIndex).innerHTML = "<b>Leftovers (1-5): </b>" + recipes[indexReduce].leftovers;
+            document.getElementById("recipes__itemVegan-" + listIndex).innerHTML = "<b>Vegan: </b>" + recipes[indexReduce].vegan;
+            document.getElementById("recipes__itemVegetarian-" + listIndex).innerHTML = "<b>Vegetarian: </b>" + recipes[indexReduce].vegetarian;
+            document.getElementById("recipes__itemMinPerson-" + listIndex).innerHTML = "<b>Min persons: </b>" + recipes[indexReduce].minPersons;
 
-    document.getElementById("recipes__itemCookingInstructions-" + listIndex).innerHTML = "Cooking instructions:" + `
-        <br> Step 1: ${recipes[indexReduce].cookingInstructions[0]} 
-        <br> Step 2: ${recipes[indexReduce].cookingInstructions[1]} 
-        <br> Step 3: ${recipes[indexReduce].cookingInstructions[2]} 
-        <br> Step 4: ${recipes[indexReduce].cookingInstructions[3]} 
-        <br> Step 5: ${recipes[indexReduce].cookingInstructions[4]}
+            // let ingredients0 = `${recipes[indexReduce].ingredients[0].amount.number} ${recipes[indexReduce].ingredients[0].amount.unit} ${recipes[indexReduce].ingredients[0].name}`;
+            // let ingredients1 = `${recipes[indexReduce].ingredients[1].amount.number} ${recipes[indexReduce].ingredients[1].amount.unit} ${recipes[indexReduce].ingredients[1].name}`;
+            // let ingredients2 = `${recipes[indexReduce].ingredients[2].amount.number} ${recipes[indexReduce].ingredients[2].amount.unit} ${recipes[indexReduce].ingredients[2].name}`;
+            // let ingredients3 = `${recipes[indexReduce].ingredients[3].amount.number} ${recipes[indexReduce].ingredients[3].amount.unit} ${recipes[indexReduce].ingredients[3].name}`;
+            // let ingredients4 = `${recipes[indexReduce].ingredients[4].amount.number} ${recipes[indexReduce].ingredients[4].amount.unit} ${recipes[indexReduce].ingredients[4].name}`;
+            // let ingredients5 = `${recipes[indexReduce].ingredients[5].amount.number} ${recipes[indexReduce].ingredients[5].amount.unit} ${recipes[indexReduce].ingredients[5].name}`;
+            // let ingredients6 = `${recipes[indexReduce].ingredients[6].amount.number} ${recipes[indexReduce].ingredients[6].amount.unit} ${recipes[indexReduce].ingredients[6].name}`;
+
+            // document.getElementById("recipes__itemIngredients-" + listIndex).innerHTML = "Ingredients:" + `
+            //     <br> - ${ingredients0} 
+            //     <br> - ${ingredients1} 
+            //     <br> - ${ingredients2} 
+            //     <br> - ${ingredients3} 
+            //     <br> - ${ingredients4} 
+            //     <br> - ${ingredients5} 
+            //     <br> - ${ingredients6}
+            //     `;
+
+            // let ingredientsIndex = 0;
+
+            // function createIngredients() {
+            //     if (ingredientsIndex < recipes[indexReduce].ingredients.length) {
+            //         document.getElementById("recipes__itemIngredients-" + listIndex).innerHTML = "Ingredients:" + `
+            //         <br> ${recipes[indexReduce].ingredients[ingredientsIndex]}`;
+            //         ingredientsIndex++;
+            //     } else {
+            //         console.log(recipes[indexReduce].ingredients.length);
+            //     }
+            // }
+            // createIngredients();
+
+            document.getElementById("recipes__itemIngredients-" + listIndex).innerHTML = "<b>Ingredients:</b>" + `
+                ${recipes[indexReduce].ingredients[0] ? `<br> -> ${recipes[indexReduce].ingredients[0]}` : ''}
+                ${recipes[indexReduce].ingredients[1] ? `<br> -> ${recipes[indexReduce].ingredients[1]}` : ''}
+                ${recipes[indexReduce].ingredients[2] ? `<br> -> ${recipes[indexReduce].ingredients[2]}` : ''}
+                ${recipes[indexReduce].ingredients[3] ? `<br> -> ${recipes[indexReduce].ingredients[3]}` : ''}
+                ${recipes[indexReduce].ingredients[4] ? `<br> -> ${recipes[indexReduce].ingredients[4]}` : ''}
+                ${recipes[indexReduce].ingredients[5] ? `<br> -> ${recipes[indexReduce].ingredients[5]}` : ''}
+                ${recipes[indexReduce].ingredients[6] ? `<br> -> ${recipes[indexReduce].ingredients[6]}` : ''}
+                ${recipes[indexReduce].ingredients[7] ? `<br> -> ${recipes[indexReduce].ingredients[7]}` : ''}
+                ${recipes[indexReduce].ingredients[8] ? `<br> -> ${recipes[indexReduce].ingredients[8]}` : ''}
+                ${recipes[indexReduce].ingredients[9] ? `<br> -> ${recipes[indexReduce].ingredients[9]}` : ''}
+                ${recipes[indexReduce].ingredients[10] ? `<br> -> ${recipes[indexReduce].ingredients[10]}` : ''}
+                ${recipes[indexReduce].ingredients[11] ? `<br> -> ${recipes[indexReduce].ingredients[11]}` : ''}
+                ${recipes[indexReduce].ingredients[12] ? `<br> -> ${recipes[indexReduce].ingredients[12]}` : ''}
+                ${recipes[indexReduce].ingredients[13] ? `<br> -> ${recipes[indexReduce].ingredients[13]}` : ''}
+                ${recipes[indexReduce].ingredients[14] ? `<br> -> ${recipes[indexReduce].ingredients[14]}` : ''}
+                `;
+    document.getElementById("recipes__itemCookingInstructions-" + listIndex).innerHTML = "<b>Cooking instructions:</b>" + `
+        <br> <b>Step 1:</b> ${recipes[indexReduce].cookingInstructions[0]} 
+        <br> <b>Step 2:</b> ${recipes[indexReduce].cookingInstructions[1]} 
+        <br> <b>Step 3:</b> ${recipes[indexReduce].cookingInstructions[2]} 
+        <br> <b>Step 4:</b> ${recipes[indexReduce].cookingInstructions[3]} 
+        <br> <b>Step 5:</b> ${recipes[indexReduce].cookingInstructions[4]}
         `;
 });

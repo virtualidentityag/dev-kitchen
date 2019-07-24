@@ -1,7 +1,26 @@
 .recipes__items {
-    margin-left: 100px;
+    margin: 0 0 10px 0;
 }
 
 .recipes__list-element {
     margin-bottom: 35px;
+    background-color: lightgray;
+    border-radius: 15px;
+    padding: 5px 5px 5px 15px;
+    margin-right: 15px;
+}
+
+#recipes__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    list-style-type: none;
+}
+
+.headline {
+    text-align: center;
+    margin: 25px 0 15px 0;
+}
+
+.specList {
+    list-style-type: none;
 }
