@@ -28,6 +28,12 @@ fetch('https://virtualidentityag.github.io/dev-kitchen/data/recipes.json')
             let recipeItemsCookingInstructions;
             let recipeItemsAssistantChef;
 
+            let difficulties = ["easyAsEddi", "easyAsShit", "JuniorKitchenDeveloper", "SeniorKitchenDeveloper", "KitchenImpossible"];
+            let price = ["$", "$$", "$$$"];
+            let rating = ["★", "★★", "★★★", "★★★★", "★★★★★"];
+            let leftovers = ["🗑", "🗑🗑", "🗑🗑🗑", "🗑🗑🗑🗑", "🗑🗑🗑🗑🗑"];
+            let persons = ["👤", "👤👤", "👤👤👤", "👤👤👤👤", "👤👤👤👤👤", "👤👤👤👤👤👤", "👤👤👤👤👤👤👤", "👤👤👤👤👤👤👤👤"];
+
             let listIndex = 0;
 
             recipes.forEach(function() {
@@ -120,14 +126,14 @@ fetch('https://virtualidentityag.github.io/dev-kitchen/data/recipes.json')
 
                         document.getElementById("recipes__itemName-" + listIndex).innerHTML = "<b>Name: </b>" + recipes[indexReduce].name;
                         document.getElementById("recipes__itemTime-" + listIndex).innerHTML = "<b>Time: </b>" + recipes[indexReduce].time + " mins";
-                        document.getElementById("recipes__itemPrice-" + listIndex).innerHTML = "<b>$-$$$: </b>" + recipes[indexReduce].price;
-                        document.getElementById("recipes__itemDifficulty-" + listIndex).innerHTML = "<b>Difficulty (1-5): </b>" + recipes[indexReduce].difficulty;
+                        document.getElementById("recipes__itemPrice-" + listIndex).innerHTML = "<b>Price (1-3): </b>" + price[recipes[indexReduce].price - 1];
+                        document.getElementById("recipes__itemDifficulty-" + listIndex).innerHTML = "<b>Difficulty (1-5): </b>" + difficulties[recipes[indexReduce].difficulty - 1];
                         document.getElementById("recipes__itemDishWashingLevel-" + listIndex).innerHTML = "<b>Dish washing level (1-5): </b>" + recipes[indexReduce].dishWashingLevel;
-                        document.getElementById("recipes__itemRating-" + listIndex).innerHTML = "<b>Rating (1-5): </b>" + recipes[indexReduce].rating;
-                        document.getElementById("recipes__itemLeftovers-" + listIndex).innerHTML = "<b>Leftovers (1-5): </b>" + recipes[indexReduce].leftovers;
-                        document.getElementById("recipes__itemVegan-" + listIndex).innerHTML = "<b>Vegan: </b>" + recipes[indexReduce].vegan;
-                        document.getElementById("recipes__itemVegetarian-" + listIndex).innerHTML = "<b>Vegetarian: </b>" + recipes[indexReduce].vegetarian;
-                        document.getElementById("recipes__itemMinPerson-" + listIndex).innerHTML = "<b>Min persons: </b>" + recipes[indexReduce].minPersons;
+                        document.getElementById("recipes__itemRating-" + listIndex).innerHTML = "<b>Rating (1-5): </b>" + rating[recipes[indexReduce].rating - 1];
+                        document.getElementById("recipes__itemLeftovers-" + listIndex).innerHTML = "<b>Leftovers (1-5): </b>" + leftovers[recipes[indexReduce].leftovers];
+                        document.getElementById("recipes__itemVegan-" + listIndex).innerHTML = "<b>Vegan: </b>" + `${recipes[indexReduce].vegan === true ? `✓ `: `✗`}`;
+                        document.getElementById("recipes__itemVegetarian-" + listIndex).innerHTML = "<b>Vegetarian: </b>" + `${recipes[indexReduce].vegetarian === true ? `✓ `: `✗`}`;
+                        document.getElementById("recipes__itemMinPerson-" + listIndex).innerHTML = "<b>Min persons: </b>" + persons[recipes[indexReduce].minPersons - 1];
                         
                         document.getElementById("recipes__itemIngredients-" + listIndex).innerHTML = "<b>Ingredients:</b>" + `
                         ${recipes[indexReduce].ingredients[0] ? `<br> -> ${recipes[indexReduce].ingredients[0]}` : ''}
