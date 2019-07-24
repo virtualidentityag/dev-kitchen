@@ -16,10 +16,10 @@
     list-style-type: none;
 @media only screen and (max-device-width: 768px) {
 grid-template-columns: 1fr 1fr;
-}
+};
 @media only screen and (max-device-width: 320px) {
 grid-template-columns: 1fr;
-}
+};
 }
 
 .headline {
