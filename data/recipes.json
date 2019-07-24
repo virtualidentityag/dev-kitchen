@@ -26,7 +26,8 @@
             "Cut mozzarella into small pieces and take off the basil lieves from the stalk.",
             "Put the fresh coctail tomatos in the sauce and the Gnotshis in the water. The Gnotshis are finished when swimming on the water surface.",
             "When the Gnotshis are ready, pour off the water, spice up the sauce with a pinch of pepper & salt and serve the Gnotshis with sauce as topping. Mozzarella and basil can be added optional."
-        ]
+        ],
+        "assistant chef": "https://github.com/karlbaumhauer"
     },
     {
         "name": "Swabian pockets (Mauldäschle) with eggs",
@@ -54,7 +55,8 @@
             "Cut all onions into small pieces and add the normal to the swabian pockets and fry them until the onions are glassy.",
             "Squirl the eggs, milk, spring onions, salt & pepper heavily until the surface is covered with bubbles.",
             "Pure the eggs into the pan with onions and fry everything together until the egg is done."
-        ]
+        ],
+        "assistant chef": "https://github.com/karlbaumhauer"
     },
     {
         "name": "Halloumi Sandwich DELUXE",
@@ -84,6 +86,8 @@
             "Cut the french baguett into 4 pieces and those pieces into half (like a sandwich bread). Put 2 leaves of salat and some sclies cucumber on one side of the baguette.",
             "Put 2 slices of halloumi, some champignons and onions on the other side of the baguette and add some curry ketchup and balsamico sauce.",
             "Put both sides together and enjoy the DELUXE sandwich."
-        ]
+        ],
+        "assistantChefLink": "https://github.com/karlbaumhauer",
+        "assistantChefFriendly": "Karl Baumhauer"
     }
 ]
