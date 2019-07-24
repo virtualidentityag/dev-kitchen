@@ -158,6 +158,8 @@ fetch('https://virtualidentityag.github.io/dev-kitchen/data/recipes.json')
                         `;
 
                         document.getElementById("recipes__itemAssistantChef-" + listIndex).innerHTML = "<b>Assistant Chef: </b>" + `<a href="${recipes[indexReduce].assistantChefLink}" target="_blank">${recipes[indexReduce].assistantChefFriendly}</a>`;
+                        console.log(recipes[indexReduce].assistantChefLink);
+                        // console.log(recipes[indexReduce].assistantChefFriendly);
                 })
             
     })
