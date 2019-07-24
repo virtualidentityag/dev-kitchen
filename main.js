@@ -11,7 +11,6 @@ fetch('https://virtualidentityag.github.io/dev-kitchen/data/recipes.json')
         return response.json();
     })
     .then(function(recipes) {
-            console.log(JSON.stringify(myJson));
 
             let listElement;
             let recipeItemsName;
