@@ -37,7 +37,7 @@ let recipes = [{
         ]
     },
     {
-        "name": "Swabian pockets (Maultaschen) with eggs",
+        "name": "Swabian pockets (Mauldäschle) with eggs",
         "tags": ["Swabian", "Eddiable", "basics"],
         "time": 10,
         "price": 1,
@@ -49,7 +49,7 @@ let recipes = [{
         "vegetarian": false,
         "minPersons": 4,
         ingredients: [
-            "1 kg Swabian pockets (Maultaschen)",
+            "1 kg Swabian pockets (Mauldäschle)",
             "2 pcs onions",
             "6 pcs eggs",
             "150 ml milk",
@@ -189,7 +189,7 @@ recipes.forEach(function() {
 
             document.getElementById("recipes__list").appendChild(listElement);
 
-            document.getElementById("recipes__itemTags-" + listIndex).innerHTML = "Tags: " + `
+            document.getElementById("recipes__itemTags-" + listIndex).innerHTML = "<b>Tags: </b>" + `
                 ${recipes[indexReduce].tags[0] ? `<br> - ${recipes[indexReduce].tags[0]}` : ''}
                 ${recipes[indexReduce].tags[1] ? `<br> - ${recipes[indexReduce].tags[1]}` : ''}
                 ${recipes[indexReduce].tags[2] ? `<br> - ${recipes[indexReduce].tags[2]}` : ''}
