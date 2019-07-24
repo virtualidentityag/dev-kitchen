@@ -30,7 +30,7 @@ let recipes = [{
         ],
         cookingInstructions: [
             "Put tomato paste, tomato pesto and cream in a small pot and let it boil brefly. Afterwards, keep it cooking on the smallest level.",
-            "While cutting the fresh coctail tomatos into quaters, boil about 2 L of water for the Gnocchis. Don#t forget to put salt in the water after it startet boiling.",
+            "While cutting the fresh coctail tomatos into quaters, boil about 2 L of water for the Gnocchis. Don't forget to put salt in the water after it startet boiling.",
             "Cut mozzarella into small pieces and take off the basil lieves from the stalk.",
             "Put the fresh coctail tomatos in the sauce and the gnocchis in the water. The gnocchis are finished when swimming on the water surface.",
             "When the gnocchis are ready, pour off the water, spice up the sauce with a pinch of pepper & salt and serve the gnocchis with sauce as topping. Mozzarella and basil can be added optional."
@@ -199,7 +199,7 @@ recipes.forEach(function() {
 
 
             document.getElementById("recipes__itemName-" + listIndex).innerHTML = "<b>Name: </b>" + recipes[indexReduce].name;
-            document.getElementById("recipes__itemTime-" + listIndex).innerHTML = "<b>Time: </b>" + recipes[indexReduce].time;
+            document.getElementById("recipes__itemTime-" + listIndex).innerHTML = "<b>Time: </b>" + recipes[indexReduce].time + " mins";
             document.getElementById("recipes__itemPrice-" + listIndex).innerHTML = "<b>$-$$$: </b>" + recipes[indexReduce].price;
             document.getElementById("recipes__itemDifficulty-" + listIndex).innerHTML = "<b>Difficulty (1-5): </b>" + recipes[indexReduce].difficulty;
             document.getElementById("recipes__itemDishWashingLevel-" + listIndex).innerHTML = "<b>Dish washing level (1-5): </b>" + recipes[indexReduce].dishWashingLevel;
