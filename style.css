@@ -1,7 +1,7 @@
 .recipes__items {
     margin: 0 0 10px 0;
 }
- 
+
 .recipes__list-element {
     margin-bottom: 35px;
     background-color: lightgray;
@@ -12,25 +12,36 @@
 
 #recipes__list {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
     list-style-type: none;
-  @media ( 375px <= width <= 667px) {
-    grid-template-columns: 1fr;
-  };
-  @media ( 668px <= width <= 1366px) {
-    grid-template-columns: 1fr 1fr;
-  };
+}
+
+@media screen and (min-width: 375px) {
+    .recipes__list {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (min-width: 668px) {
+    .recipes__list {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 1366px) {
+    .recipes__list {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }
 
 .headline {
     text-align: center;
     margin: 25px 0 15px 0;
 }
- 
+
 .specList {
     list-style-type: none;
 }
- 
+
 img {
     vertical-align: top;
     width: 75px;
