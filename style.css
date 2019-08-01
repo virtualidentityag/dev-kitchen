@@ -16,19 +16,19 @@
 }
 
 @media screen and (min-width: 375px) {
-    .recipes__list {
+    #recipes__list {
         grid-template-columns: 1fr;
     }
 }
 
 @media screen and (min-width: 668px) {
-    .recipes__list {
+    #recipes__list {
         grid-template-columns: 1fr 1fr;
     }
 }
 
 @media screen and (min-width: 1366px) {
-    .recipes__list {
+    #recipes__list {
         grid-template-columns: 1fr 1fr 1fr;
     }
 }
