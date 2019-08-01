@@ -1,16 +1,10 @@
-// {Difficulties:
-//     "easyAsEddi": false,
-//     "easyAsShit": true,
-//     "JuniorKitchenDeveloper": false,
-//     "SeniorKitchenDeveloper": false,
-//     "KitchenImpossible": false
-// },
-
+const results = [];
 fetch('https://virtualidentityag.github.io/dev-kitchen/data/recipes.json')
     .then(function(response) {
         return response.json();
     })
     .then(function(recipes) {
+            results.push(...recipes);
 
             let listElement;
             let recipeItemsName;
@@ -36,7 +30,7 @@ fetch('https://virtualidentityag.github.io/dev-kitchen/data/recipes.json')
 
             let listIndex = 0;
 
-            recipes.forEach(function() {
+            results.forEach(function() {
                         listIndex++;
                         listElement = document.createElement("li");
                         listElement.className = "recipes__list-element";
@@ -117,53 +111,64 @@ fetch('https://virtualidentityag.github.io/dev-kitchen/data/recipes.json')
                         document.getElementById("recipes__list").appendChild(listElement);
 
                         document.getElementById("recipes__itemTags-" + listIndex).innerHTML = "<b>Tags: </b>" + `
-                            ${recipes[indexReduce].tags[0] ? `<br> - ${recipes[indexReduce].tags[0]}` : ''}
-                            ${recipes[indexReduce].tags[1] ? `<br> - ${recipes[indexReduce].tags[1]}` : ''}
-                            ${recipes[indexReduce].tags[2] ? `<br> - ${recipes[indexReduce].tags[2]}` : ''}
-                            ${recipes[indexReduce].tags[3] ? `<br> - ${recipes[indexReduce].tags[3]}` : ''}
-                            ${recipes[indexReduce].tags[4] ? `<br> - ${recipes[indexReduce].tags[4]}` : ''}
+                            ${results[indexReduce].tags[0] ? `<br> - ${results[indexReduce].tags[0]}` : ''}
+                            ${results[indexReduce].tags[1] ? `<br> - ${results[indexReduce].tags[1]}` : ''}
+                            ${results[indexReduce].tags[2] ? `<br> - ${results[indexReduce].tags[2]}` : ''}
+                            ${results[indexReduce].tags[3] ? `<br> - ${results[indexReduce].tags[3]}` : ''}
+                            ${results[indexReduce].tags[4] ? `<br> - ${results[indexReduce].tags[4]}` : ''}
                             `;
 
-                        document.getElementById("recipes__itemName-" + listIndex).innerHTML = "<b>Name: </b>" + recipes[indexReduce].name;
-                        document.getElementById("recipes__itemTime-" + listIndex).innerHTML = "<b>Time: </b>" + recipes[indexReduce].time + " mins";
-                        document.getElementById("recipes__itemPrice-" + listIndex).innerHTML = "<b>Price (1-3): </b>" + price[recipes[indexReduce].price - 1];
-                        document.getElementById("recipes__itemDifficulty-" + listIndex).innerHTML = "<b>Difficulty (1-5): </b>" + difficulties[recipes[indexReduce].difficulty - 1];
-                        document.getElementById("recipes__itemDishWashingLevel-" + listIndex).innerHTML = "<b>Dish washing level (1-5): </b>" + recipes[indexReduce].dishWashingLevel;
-                        document.getElementById("recipes__itemRating-" + listIndex).innerHTML = "<b>Rating (1-5): </b>" + rating[recipes[indexReduce].rating - 1];
-                        document.getElementById("recipes__itemLeftovers-" + listIndex).innerHTML = "<b>Leftovers (1-5): </b>" + leftovers[recipes[indexReduce].leftovers];
-                        document.getElementById("recipes__itemVegan-" + listIndex).innerHTML = "<b>Vegan: </b>" + `${recipes[indexReduce].vegan === true ? `✓ `: `✗`}`;
-                        document.getElementById("recipes__itemVegetarian-" + listIndex).innerHTML = "<b>Vegetarian: </b>" + `${recipes[indexReduce].vegetarian === true ? `✓ `: `✗`}`;
-                        document.getElementById("recipes__itemMinPerson-" + listIndex).innerHTML = "<b>Min persons: </b>" + persons[recipes[indexReduce].minPersons - 1];
+                        document.getElementById("recipes__itemName-" + listIndex).innerHTML = "<b>Name: </b>" + results[indexReduce].name;
+                        document.getElementById("recipes__itemTime-" + listIndex).innerHTML = "<b>Time: </b>" + results[indexReduce].time + " mins";
+                        document.getElementById("recipes__itemPrice-" + listIndex).innerHTML = "<b>Price (1-3): </b>" + price[results[indexReduce].price - 1];
+                        document.getElementById("recipes__itemDifficulty-" + listIndex).innerHTML = "<b>Difficulty (1-5): </b>" + difficulties[results[indexReduce].difficulty - 1];
+                        document.getElementById("recipes__itemDishWashingLevel-" + listIndex).innerHTML = "<b>Dish washing level (1-5): </b>" + results[indexReduce].dishWashingLevel;
+                        document.getElementById("recipes__itemRating-" + listIndex).innerHTML = "<b>Rating (1-5): </b>" + rating[results[indexReduce].rating - 1];
+                        document.getElementById("recipes__itemLeftovers-" + listIndex).innerHTML = "<b>Leftovers (1-5): </b>" + leftovers[results[indexReduce].leftovers];
+                        document.getElementById("recipes__itemVegan-" + listIndex).innerHTML = "<b>Vegan: </b>" + `${results[indexReduce].vegan === true ? `✓ `: `✗`}`;
+                        document.getElementById("recipes__itemVegetarian-" + listIndex).innerHTML = "<b>Vegetarian: </b>" + `${results[indexReduce].vegetarian === true ? `✓ `: `✗`}`;
+                        document.getElementById("recipes__itemMinPerson-" + listIndex).innerHTML = "<b>Min persons: </b>" + persons[results[indexReduce].minPersons - 1];
                         
                         document.getElementById("recipes__itemIngredients-" + listIndex).innerHTML = "<b>Ingredients:</b>" + `
-                        ${recipes[indexReduce].ingredients[0] ? `<br> -> ${recipes[indexReduce].ingredients[0]}` : ''}
-                        ${recipes[indexReduce].ingredients[1] ? `<br> -> ${recipes[indexReduce].ingredients[1]}` : ''}
-                        ${recipes[indexReduce].ingredients[2] ? `<br> -> ${recipes[indexReduce].ingredients[2]}` : ''}
-                        ${recipes[indexReduce].ingredients[3] ? `<br> -> ${recipes[indexReduce].ingredients[3]}` : ''}
-                        ${recipes[indexReduce].ingredients[4] ? `<br> -> ${recipes[indexReduce].ingredients[4]}` : ''}
-                        ${recipes[indexReduce].ingredients[5] ? `<br> -> ${recipes[indexReduce].ingredients[5]}` : ''}
-                        ${recipes[indexReduce].ingredients[6] ? `<br> -> ${recipes[indexReduce].ingredients[6]}` : ''}
-                        ${recipes[indexReduce].ingredients[7] ? `<br> -> ${recipes[indexReduce].ingredients[7]}` : ''}
-                        ${recipes[indexReduce].ingredients[8] ? `<br> -> ${recipes[indexReduce].ingredients[8]}` : ''}
-                        ${recipes[indexReduce].ingredients[9] ? `<br> -> ${recipes[indexReduce].ingredients[9]}` : ''}
-                        ${recipes[indexReduce].ingredients[10] ? `<br> -> ${recipes[indexReduce].ingredients[10]}` : ''}
-                        ${recipes[indexReduce].ingredients[11] ? `<br> -> ${recipes[indexReduce].ingredients[11]}` : ''}
-                        ${recipes[indexReduce].ingredients[12] ? `<br> -> ${recipes[indexReduce].ingredients[12]}` : ''}
-                        ${recipes[indexReduce].ingredients[13] ? `<br> -> ${recipes[indexReduce].ingredients[13]}` : ''}
-                        ${recipes[indexReduce].ingredients[14] ? `<br> -> ${recipes[indexReduce].ingredients[14]}` : ''}
+                        ${results[indexReduce].ingredients[0] ? `<br> -> ${results[indexReduce].ingredients[0]}` : ''}
+                        ${results[indexReduce].ingredients[1] ? `<br> -> ${results[indexReduce].ingredients[1]}` : ''}
+                        ${results[indexReduce].ingredients[2] ? `<br> -> ${results[indexReduce].ingredients[2]}` : ''}
+                        ${results[indexReduce].ingredients[3] ? `<br> -> ${results[indexReduce].ingredients[3]}` : ''}
+                        ${results[indexReduce].ingredients[4] ? `<br> -> ${results[indexReduce].ingredients[4]}` : ''}
+                        ${results[indexReduce].ingredients[5] ? `<br> -> ${results[indexReduce].ingredients[5]}` : ''}
+                        ${results[indexReduce].ingredients[6] ? `<br> -> ${results[indexReduce].ingredients[6]}` : ''}
+                        ${results[indexReduce].ingredients[7] ? `<br> -> ${results[indexReduce].ingredients[7]}` : ''}
+                        ${results[indexReduce].ingredients[8] ? `<br> -> ${results[indexReduce].ingredients[8]}` : ''}
+                        ${results[indexReduce].ingredients[9] ? `<br> -> ${results[indexReduce].ingredients[9]}` : ''}
+                        ${results[indexReduce].ingredients[10] ? `<br> -> ${results[indexReduce].ingredients[10]}` : ''}
+                        ${results[indexReduce].ingredients[11] ? `<br> -> ${results[indexReduce].ingredients[11]}` : ''}
+                        ${results[indexReduce].ingredients[12] ? `<br> -> ${results[indexReduce].ingredients[12]}` : ''}
+                        ${results[indexReduce].ingredients[13] ? `<br> -> ${results[indexReduce].ingredients[13]}` : ''}
+                        ${results[indexReduce].ingredients[14] ? `<br> -> ${results[indexReduce].ingredients[14]}` : ''}
                         `;
                         
                         document.getElementById("recipes__itemCookingInstructions-" + listIndex).innerHTML = "<b>Cooking instructions:</b>" + `
-                        ${recipes[indexReduce].cookingInstructions[0] ? `<br> <b>Step 1:</b> ${recipes[indexReduce].cookingInstructions[0]}` : ''}
-                        ${recipes[indexReduce].cookingInstructions[1] ? `<br> <b>Step 2:</b> ${recipes[indexReduce].cookingInstructions[1]}` : ''}
-                        ${recipes[indexReduce].cookingInstructions[2] ? `<br> <b>Step 3:</b> ${recipes[indexReduce].cookingInstructions[2]}` : ''}
-                        ${recipes[indexReduce].cookingInstructions[3] ? `<br> <b>Step 4:</b> ${recipes[indexReduce].cookingInstructions[3]}` : ''}
-                        ${recipes[indexReduce].cookingInstructions[4] ? `<br> <b>Step 5:</b> ${recipes[indexReduce].cookingInstructions[4]}` : ''}
-                        ${recipes[indexReduce].cookingInstructions[5] ? `<br> <b>Step 6:</b> ${recipes[indexReduce].cookingInstructions[5]}` : ''}
-                        ${recipes[indexReduce].cookingInstructions[6] ? `<br> <b>Step 7:</b> ${recipes[indexReduce].cookingInstructions[6]}` : ''}
+                        ${results[indexReduce].cookingInstructions[0] ? `<br> <b>Step 1:</b> ${results[indexReduce].cookingInstructions[0]}` : ''}
+                        ${results[indexReduce].cookingInstructions[1] ? `<br> <b>Step 2:</b> ${results[indexReduce].cookingInstructions[1]}` : ''}
+                        ${results[indexReduce].cookingInstructions[2] ? `<br> <b>Step 3:</b> ${results[indexReduce].cookingInstructions[2]}` : ''}
+                        ${results[indexReduce].cookingInstructions[3] ? `<br> <b>Step 4:</b> ${results[indexReduce].cookingInstructions[3]}` : ''}
+                        ${results[indexReduce].cookingInstructions[4] ? `<br> <b>Step 5:</b> ${results[indexReduce].cookingInstructions[4]}` : ''}
+                        ${results[indexReduce].cookingInstructions[5] ? `<br> <b>Step 6:</b> ${results[indexReduce].cookingInstructions[5]}` : ''}
+                        ${results[indexReduce].cookingInstructions[6] ? `<br> <b>Step 7:</b> ${results[indexReduce].cookingInstructions[6]}` : ''}
                         `;
 
-                        document.getElementById("recipes__itemAssistantChef-" + listIndex).innerHTML = "<b>Assistant Chef: </b>" + `<br> <img src="${recipes[indexReduce].assistantChef[2]}" alt="Photo">` + `<br> <a href="${recipes[indexReduce].assistantChef[0]}" target="_blank">${recipes[indexReduce].assistantChef[1]}</a>`;
-                })
-            
-    })
+                        document.getElementById("recipes__itemAssistantChef-" + listIndex).innerHTML = "<b>Assistant Chef: </b>" + `<br> <img src="${results[indexReduce].assistantChef[2]}" alt="Photo">` + `<br> <a href="${results[indexReduce].assistantChef[0]}" target="_blank">${results[indexReduce].assistantChef[1]}</a>`;
+                        
+                    });            
+    });
+    document.getElementById("searchButton").onclick = findMatches;
+    document.getElementById("searchInput").onchange = findMatches;
+    let searchInput = document.getElementById("searchInput").value;
+    
+    function findMatches(searchInput, results) {
+        return results.filter(recipe => {
+            const regex = new RegExp(searchInput, "gi");
+            return recipe.name.match(regex);
+        })
+        console.log(results);
+    }
