@@ -12,8 +12,28 @@
 
 #recipes__list {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
     list-style-type: none;
+<<<<<<< HEAD
+=======
+}
+
+@media screen and (min-width: 375px) {
+    .recipes__list {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (min-width: 668px) {
+    .recipes__list {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 1366px) {
+    .recipes__list {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+>>>>>>> f610b3d67970b212bdd745edc11227ca6a4e1755
 }
 
 .headline {
